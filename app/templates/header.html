@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}HAPPET{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic|Playfair+Display:400,700&subset=latin,cyrillic">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+    {% block styles %}
+    {% endblock %}
+    <!--<link rel="stylesheet" type="text/css" href="../../static/css/style.css">-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <a class="logo" href="{{ url_for('main.index') }}" onclick="location.reload()">
+          <span>H</span>
+          <span>A</span>
+          <span>P</span>
+          <span>P</span>
+          <span>E</span>
+          <span>T</span>
+        </a>
+        <div class="nav-toggle"><span></span></div>
+        <div class="location"><p>&#128681; Katowice</p></div>
+        <ul id="menu">
+              <li><a href="{{ url_for('main.index') }}">Home</a></li>
+              <li><a href="{{ url_for('main.about') }}">About</a></li>
+              <li><a href="{{ url_for('main.adopt') }}">Adopt</a></li>
+              <li><a href="{{ url_for('main.rehome') }}">Rehome</a></li>
+              <li><a href="{{ url_for('main.temporary_care') }}">Temporary Care</a></li>
+           {% if not current_user.is_authenticated %}
+              <li><a href="{{ url_for('main.login') }}">Login</a></li>
+              <li><a href="{{ url_for('main.register') }}">Sign Up</a></li>
+           {% else %}
+               <li><a href="{{ url_for('main.profile', user_id=current_user.id) }}">Profile</a></li>
+               <li><a href="{{ url_for('main.logout') }}">Log out</a></li>
+           {% endif %}
+        </ul>
+      </nav>
+    </header>

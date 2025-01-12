@@ -1,0 +1,646 @@
+
+
+*, *:after, *:before {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   transition: .5s ease-in-out;
+   /* adding smooth transitions for all page elements*/
+}
+
+ul {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   outline: none;
+}
+
+img {
+   display: block;
+   width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-family: 'Playfair Display';
+   font-weight: normal;
+   letter-spacing: 1px;
+}
+
+body {
+   font-family: 'Open Sans', arial, sans-serif;
+   font-size: 14px;
+   line-height: 1;
+   color: #373737;
+   background: #f7f7f7;
+}
+
+/* let's add flow cleaning for all containers that have child element wrapping set in the middle */
+header:after, .container:after, footer:after, .widget-posts-list li:after, #subscribe:after {
+   content: "";
+   display: table;
+   clear: both;
+}
+
+/* a style class that adjusts the width of the grid container*/
+.container {
+   margin: 0 auto;
+   width: 100%;
+   max-width: 1120px;
+   padding: 0 15px;
+}
+
+header {
+   width: 100%;
+   background: white;
+   box-shadow: 3px 3px 1px rgba(0, 0, 0, .05);
+   padding: 15px 0;
+   margin-bottom: 30px;
+   position: relative;
+}
+
+/* logo */
+.logo {
+   display: block;
+   float: left;
+}
+
+.logo span {
+   color: white;
+   display: inline-block;
+   width: 30px;
+   height: 30px;
+   line-height: 30px;
+   border-radius: 50%;
+   margin: 5px 0;
+   text-align: center;
+   text-shadow: 2px 2px 1px rgba(0, 0, 0, .4);
+}
+
+.logo span:nth-child(odd) {
+   background: #EF5A42;
+}
+
+.logo span:nth-child(even) {
+   background: #F8B763;
+}
+
+/* Menu */
+#menu {
+   float: right;
+}
+
+#menu li {
+   display: inline-block;
+   margin-right: 30px;
+}
+
+#menu a {
+   color: #111;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   font-weight: 600;
+   display: block;
+   line-height: 40px;
+}
+
+#menu a:hover {
+   color: #EF5A42;
+}
+
+#menu li:last-child {
+   margin-right: 0;
+}
+
+.location {
+   float: right;
+   height: 40px;
+   margin-top: 12px;
+   margin-left: 46px;
+   display: inline-block;
+   position: relative;
+}
+
+/* menu switch button that appears at 768px width */
+.nav-toggle {
+   display: none;
+   position: relative;
+   float: right;
+   width: 40px;
+   height: 40px;
+   margin-left: 20px;
+   background: #EF5A42;
+   cursor: pointer;
+}
+
+.nav-toggle span {
+   display: block;
+   position: absolute;
+   top: 19px;
+   left: 8px;
+   right: 8px;
+   height: 2px;
+   background: white;
+}
+
+.nav-toggle span:before, .nav-toggle span:after {
+   content: "";
+   position: absolute;
+   display: block;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background: white;
+}
+
+.nav-toggle span:before {
+   top: -10px;
+}
+
+.nav-toggle span:after {
+   bottom: -10px;
+}
+
+/* a class that will be added to the top menu when you click on the button and will show the hidden menu*/
+#menu.active {
+   max-height: 123px;
+}
+
+/* the left container */
+.posts-list {
+   margin-bottom: 30px;
+   width: 64%;
+   float: left;
+}
+
+/* the block for the article */
+.post {
+   margin-bottom: 45px;
+}
+
+.post-content p {
+   line-height: 1.5;
+   padding-bottom: 1em;
+}
+
+.post-image {
+   margin-bottom: 30px;
+}
+
+.category {
+   margin-bottom: 15px;
+}
+
+.category a {
+   color: #F8B763;
+   text-transform: uppercase;
+}
+
+.post-title {
+   margin-bottom: 15px;
+   font-size: 26px;
+}
+
+/* a block with a "Continue reading" Button and social media buttons */
+.post-footer {
+   border-top: 1px solid #EBEBE3;
+   border-bottom: 1px solid #EBEBE3;
+   position: relative;
+   margin-top: 15px;
+}
+
+.more-link {
+   position: relative;
+   display: inline-block;
+   font-size: 10px;
+   text-transform: uppercase;
+   color: white;
+   line-height: 44px;
+   padding: 0 22px;
+   background: #3C3D41;
+   letter-spacing: 0.1em;
+   white-space: nowrap;
+}
+
+.more-link:after {
+   content: '';
+   display: block;
+   position: absolute;
+   width: 0;
+   height: 0;
+   top: 0;
+   right: 0;
+   border: solid transparent;
+   border-width: 22px 18px;
+   border-left-color: #3C3D41;
+   transform: translateX(100%);
+}
+
+.post-social {
+   position: absolute;
+   left: auto;
+   top: 50%;
+   right: 0;
+   text-align: right;
+   transform: translateY(-50%);
+   padding: 0;
+   font-size: 12px;
+}
+
+.post-social a {
+   display: inline-block;
+   margin-left: 8px;
+   color: #F8B763;
+   width: 25px;
+   height: 25px;
+   line-height: 23px;
+   text-align: center;
+   border-radius: 50%;
+   border: 1px solid;
+}
+
+.partnersimages a {
+   width: 20%;
+   display: inline-block;
+   margin-right: 15px;
+}
+
+/* right container */
+aside {
+   width: 33%;
+   float: right;
+}
+
+/* block for widgets */
+.widget {
+   padding: 20px 15px;
+   background: white;
+   font-size: 13px;
+   margin-bottom: 30px;
+   box-shadow: 3px 3px 1px rgba(0, 0, 0, .05);
+}
+
+.widget-title {
+   font-size: 18px;
+   padding: 10px;
+   margin-bottom: 20px;
+   text-align: center;
+   border: 2px solid #F8B763;
+   box-shadow: 3px 3px 0 0 #F8B763;
+}
+
+.widget-category-list li {
+   border-bottom: 1px solid #EBEBE3;
+   padding: 10px 0;
+   font-style: italic;
+}
+
+.widget-category-list li:last-child {
+   border-bottom: none;
+}
+
+.widget-category-list li a {
+   color: #626262;
+   line-height: 30px;
+   margin-right: 6px;
+   font-style: normal;
+}
+
+.widget-category-list li a:hover {
+   color: #ff985c;
+}
+
+.widget-posts-list p {
+   line-height: 22px;
+}
+
+.widget-posts-list li {
+   border-top: 1px solid #EBEBE3;
+   padding: 15px 0;
+}
+
+.widget-posts-list li:hover {
+   cursor: pointer;
+   box-shadow: 2px 2px 0 0 black;
+}
+
+.widget-posts-list li:nth-child(1) {
+   border-top: none;
+}
+
+.widget-posts-list span {
+   display: none;
+}
+
+.widget-post-title {
+   font-size: 1.5em;
+}
+
+.post-image-small {
+   width: 50%;
+   float: left;
+   margin-right: 15px;
+}
+
+#watchmore {
+   margin-top: 15px;
+   padding: 15px 0;
+   color: #f18512;
+   font-style: italic;
+   font-size: 14px;
+   font-weight: bold;
+}
+
+#watchmore a {
+   color: #626262;
+   margin-right: 6px;
+   font-style: normal;
+}
+
+#watchmore a:hover {
+   color: #e9ac6b;
+}
+
+.widget-post-title {
+   float: left;
+}
+
+/* subscription form */
+#subscribe {
+   position: relative;
+   width: 100%;
+   padding: 15px 0;
+}
+
+#subscribe input {
+   width: 100%;
+   display: block;
+   float: left;
+   border: 2px solid #EBEBE3;
+   padding: 0 0 0 10px;
+   height: 40px;
+   position: relative;
+   outline: none;
+   color: #9E9C9C;
+   font-style: italic;
+}
+
+#subscribe button {
+   padding: 0 15px;
+   background: transparent;
+   height: 40px;
+   border: none;
+   position: absolute;
+   right: 0;
+   color: #EF5A42;
+   cursor: pointer;
+   font-size: 18px;
+}
+
+#subscribe input:focus+button {
+   background: #EF5A42;
+   color: white;
+}
+
+footer {
+   padding: 30px 0;
+   background: #3C3D41;
+   color: white;
+}
+
+.footer-col {
+   width: 33.3333333333%;
+   float: left;
+}
+
+.footer-col span {
+   line-height: 1.5;
+   padding-bottom: 1em;
+}
+
+.footer-col a {
+   color: white;
+}
+
+.footer-col:last-child {
+   text-align: right;
+}
+
+.social-bar-wrap {
+   text-align: center;
+}
+
+.social-bar-wrap a {
+   padding: 0 7px;
+   font-size: 18px;
+}
+
+
+
+
+#slider {
+   position: relative;
+   text-align: center;
+   top: 10px;
+}
+
+#slider{
+   margin: 0 auto;
+}
+
+#slides article{
+   width: 20%;
+   float: left;
+}
+
+#slides .image{
+   width: 500%;
+   line-height: 0;
+}
+
+#overflow{
+   width: 100%;
+   overflow: hidden;
+}
+
+#desktop:checked ~ #slider{
+   max-width: 600px;
+}
+
+label, a{
+   cursor: pointer;
+}
+
+.all input{
+   display: none;
+}
+
+#switch1:checked ~ #slides .image{
+   margin-left: 0;
+}
+
+#switch2:checked ~ #slides .image{
+   margin-left: -100%;
+}
+
+#switch3:checked ~ #slides .image{
+   margin-left: -200%;
+}
+
+#controls{
+   margin: -25% 0 0 0;
+   width: 100%;
+   height: 50px;
+}
+
+#active label{
+   border-radius: 10px;
+   display: inline-block;
+   width: 15px;
+   height: 15px;
+   background: #bbb;
+}
+
+#active{
+   margin: 23% 0 0;
+   text-align: center;
+}
+
+#active label:hover{
+   background: #76c8ff;
+   border-color: #777 !important;
+}
+
+/*the color of the active label when the checkbox is activated*/
+#switch1:checked ~ #active label:nth-child(1),
+#switch2:checked ~ #active label:nth-child(2),
+#switch3:checked ~ #active label:nth-child(3),
+#switch4:checked ~ #active label:nth-child(4),
+#switch5:checked ~ #active label:nth-child(5){
+   background: #18a3dd;
+   border-color: #18a3dd !important;
+}
+
+#slides .image{ /*animation of scrolling through images*/
+   transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+#controls label:hover{ /*transparency of the arrows on hover*/
+   opacity: 0.6;
+}
+
+#controls label{ /*transparency of the arrows when the cursor is retracted*/
+   transition: opacity 0.2s ease-out;
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+   /* shows a button to switch the top navigation */
+   .nav-toggle {
+      display: block;
+   }
+
+   header {
+      padding: 10px 0;
+   }
+
+   /* we hide the top menu, cancel the flow around, position it, and move it to the height of the site header */
+   #menu {
+      max-height: 0;
+      background: white;
+      float: none;
+      position: absolute;
+      overflow: hidden;
+      top: 63px;
+      right: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      z-index: 3;
+   }
+
+   /* making the list elements block-by-block so that they are located under each other */
+   #menu li {
+      display: block;
+      text-align: center;
+      border-bottom: 1px solid #EBEBE3;
+      margin-right: 0;
+   }
+}
+
+@media (max-width: 768px) {
+   /* we cancel the flow around the left and right columns, set their width to 100%*/
+   .posts-list, aside {
+      width: 100%;
+      float: none;
+   }
+
+   .post-image-small {
+      width: 100%;
+      margin-bottom: 15px;
+      float: none;
+   }
+}
+
+@media (max-width: 480px) {
+   /* cancel the flow around for the logo and level it in the center*/
+   .logo {
+      float: none;
+      margin: 0 auto 15px;
+      display: table;
+   }
+
+   .logo span {
+      margin: 0 2px;
+   }
+
+   /* positioning the menu to increase the height of the header */
+   #menu {
+      top: 118px;
+   }
+
+   /* positioning the search form on the left edge */
+   .location {
+      float: left;
+      margin-left: 0;
+   }
+
+   /* remove the upper and lower borders and align the button in the center */
+   .post-footer {
+      border-top: none;
+      border-bottom: none;
+      text-align: center;
+   }
+
+   /* canceling the positioning of social media buttons */
+   .post-social {
+      position: static;
+      text-align: center;
+      transform: none;
+      margin-top: 20px;
+   }
+
+   .partnersimages a {
+      width: 40%;
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+   }
+
+   /* cancel the flow around for the basement columns of the page */
+   .footer-col {
+      float: none;
+      margin-bottom: 20px;
+      width: 100%;
+      text-align: center;
+   }
+
+   .footer-col:last-child {
+      text-align: center;
+      margin-bottom: 0;
+   }
+}

@@ -1,0 +1,113 @@
+{% include "header.html" %}
+
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+{% endblock %}
+
+
+    <div class="container">
+      <div class="posts-list">
+        <article id="post-1" class="post">
+          <div class="post-image"><a><img src="../../static/images/petsmain.jpg"></a></div>
+          <div class="post-content">
+            <h2 class="post-title">What is HAPPET?</h2>
+            <p>HAPPET – this is a non-profit project aimed at systematically solving the problem of stray animals. Part of the project is a website – a free all-Poland online service for finding a pet in shelters.<br><br>
+            Using the site, you can:<br><br>
+
+              &#8226; choose and pick up your favorite animal for free (Adopt an animal section);<br>
+              &#8226; post information about a cat or dog looking for a home (Take an animal to the shelter section);<br>
+              &#8226; give custody of your own animal for the period of time you have chosen, if you were forced to leave the House (section "Animals during emergencies").</p>
+            <div class="post-footer">
+              <a href="{{ url_for('main.about') }}" class="more-link">Continue your acquaintance</a>
+              <div class="post-social">
+                <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="" target="_blank"><i class="fa fa-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <div id="post-2" class="post">
+          <div class="category"><a>View</a></div>
+          <h2 class="post-title">View of our shelters</h2>
+          <div class="all">
+            <input checked type="radio" name="respond" id="desktop">
+            <article id="slider">
+              <input checked type="radio" name="slider" id="switch1">
+              <input type="radio" name="slider" id="switch2">
+              <input type="radio" name="slider" id="switch3">
+              <div id="slides">
+                <div id="overflow">
+                  <div class="image">
+                    <article><img src="../../static/images/prytulok3.jpg"></article>
+                    <article><img src="../../static/images/prytulok2.jpg"></article>
+                    <article><img src="../../static/images/prytulok.jpg"></article>
+                  </div>
+                </div>
+              </div>
+              <div id="controls">
+                <label for="switch1"></label>
+                <label for="switch2"></label>
+                <label for="switch3"></label>
+              </div>
+              <div id="active">
+                <label for="switch1"></label>
+                <label for="switch2"></label>
+                <label for="switch3"></label>
+              </div>
+            </article>
+          </div>
+        </div>
+        <article id="post-3" class="post">
+          <div class="category"><a>Partnership</a></div>
+          <h2 class="post-title">Our partners</h2>
+          <div class="partnersimages">
+            <a href="https://netpeak.group/" target="_blank"><img src="../../static/images/netpeak.jpg"></a>
+            <a href="https://gladpet.org/" target="_blank"><img src="../../static/images/gladpet.jpg"></a>
+            <a href="https://dogcat.com.ua/" target="_blank"><img src="../../static/images/sirius.jpg"></a>
+            <a href="https://esputnik.com/uk" target="_blank"><img src="../../static/images/esputnik.png"></a>
+          </div>
+        </article>
+      </div>
+
+      <aside>
+        <div class="widget">
+          <h3 class="widget-title">What can you do?</h3>
+          <ul class="widget-category-list">
+            <li><a href="{{ url_for('main.adopt') }}">Adopt an animal of your choice</a> &#10004;</li>
+            <li><a href="{{ url_for('main.rehome') }}">Take an animal to the shelter</a> &#10004;</li>
+            <li><a href="{{ url_for('main.temporary_care') }}">Leave your pet in a shelter for a period of your choice during a state of emergency</a> &#10004;</li>
+          </ul>
+        </div>
+        <div class="widget">
+          <a style="color: black; text-decoration: none;" href="{{ url_for('main.adopt') }} "><h3 class="widget-title">Looking for a home</h3></a>
+            <ul class="widget-posts-list">
+              {% for animal in animals %}
+                <li onclick="location.href = 'pet_page/{{ animal.id }}';">
+                  <div class="post-image-small">
+                    <a><img src="{{ animal.image_url }}"></a>  <!-- Assuming you have an image URL field -->
+                  </div>
+                  <h4 class="widget-post-title">{{ animal.animal_name }}</h4><br><br>
+                  <p>Color: {{ animal.animal_color }}</p>
+                  <p>Gender: {{ animal.animal_gender }}</p>
+                  <p>Type: {{ animal.animal_type }}</p>
+                  <p>Age: <span>{{ animal.animal_age }}</span></p>
+                </li>
+              {% endfor %}
+            </ul>
+          <p id="watchmore"><a href="{{ url_for('main.adopt') }}">View all</a>&#8226;</p>
+        </div>
+        <div class="widget">
+          <h3 class="widget-title">Subscribe to the newsletter</h3>
+          <form action="" method="post" id="subscribe">
+            <input type="email" name="email" placeholder="Your email" required>
+            <button type="submit"><i class="fa fa-paper-plane-o"></i></button>
+          </form>
+        </div>
+      </aside>
+    </div> <!-- конец div class="container"-->
+
+
+
+{% include "footer.html" %}

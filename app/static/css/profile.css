@@ -1,0 +1,107 @@
+/* General Reset */
+body, h1, h2, p, input, button, table {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonts */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1120px;
+    padding: 0 15px;
+}
+
+/* Profile Title */
+.profile-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    text-align: center;
+    color: #EF5A42;
+    margin-bottom: 30px;
+}
+
+/* Card Styling */
+.card {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 20px;
+    color: #EF5A42;
+    border-bottom: 2px solid #EF5A42;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #EF5A42;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #d94731;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #EF5A42;
+    color: #fff;
+}
+
+/* Pets Section */
+.pets-posted .pet {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.pets-posted .pet:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}

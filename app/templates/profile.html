@@ -1,0 +1,42 @@
+{% include "header.html" %}
+
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+<link rel="stylesheet" type="text/css" href="../../static/css/profile.css">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="profile-title">Profile</h1>
+
+        <!-- User Information Section -->
+        <div class="card user-info">
+            <h2 class="section-title">{{ user.name }}'s Information</h2>
+            <p><strong>Name:</strong> {{ user.name }} {{ user.surname }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Phone:</strong> +123 456 7890</p>
+        </div>
+
+        <!-- Posted Pets Section -->
+        <div class="card pets-posted">
+            <h2 class="section-title">{{ user.name }}'s Posted Pets</h2>
+            {% for animal in user.animals %}
+
+            <div class="pet">
+                <h3>{{ animal.animal_name }}</h3>
+                <p><strong>Color:</strong> {{ animal.animal_color }}</p>
+                <p><strong>Gender:</strong> {{ animal.animal_gender }}</p>
+                <p><strong>Type:</strong> {{ animal.animal_type }}</p>
+            </div>
+
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+{% endblock %}

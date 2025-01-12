@@ -1,0 +1,387 @@
+
+
+*, *:after, *:before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	transition: .5s ease-in-out;
+	/* adding smooth transitions for all page elements*/
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Playfair Display';
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+
+body {
+	font-family: 'Open Sans', arial, sans-serif;
+	font-size: 14px;
+	line-height: 1;
+	color: #373737;
+	background: #f7f7f7;
+}
+
+/* let's add flow cleaning for all containers that have child element wrapping set in the middle */
+header:after, .container:after, footer:after, .widget-posts-list li:after, #subscribe:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* a style class that adjusts the width of the grid container*/
+.container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1120px;
+	padding: 0 15px;
+}
+
+header {
+	width: 100%;
+	background: white;
+	box-shadow: 3px 3px 1px rgba(0, 0, 0, .05);
+	padding: 15px 0;
+	margin-bottom: 30px;
+	position: relative;
+}
+
+/* logo */
+.logo {
+	display: block;
+	float: left;
+}
+
+.logo span {
+	color: white;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 50%;
+	margin: 5px 0;
+	text-align: center;
+	text-shadow: 2px 2px 1px rgba(0, 0, 0, .4);
+}
+
+.logo span:nth-child(odd) {
+  background: #EF5A42;
+}
+
+.logo span:nth-child(even) {
+  background: #F8B763;
+}
+
+/* Menu */
+#menu {
+  float: right;
+}
+
+#menu li {
+	display: inline-block;
+	margin-right: 30px;
+}
+
+#menu li:hover {
+	cursor: pointer;
+}
+
+#menu a {
+	color: #111;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 600;
+	display: block;
+	line-height: 40px;
+}
+
+#menu a:hover {
+  color: #EF5A42;
+}
+
+#menu li:last-child {
+  margin-right: 0;
+}
+
+.location {
+	float: right;
+	height: 40px;
+	margin-top: 12px;
+	margin-left: 46px;
+	display: inline-block;
+	position: relative;
+}
+
+/* menu switch button that appears at 768px width */
+.nav-toggle {
+	display: none;
+	position: relative;
+	float: right;
+	width: 40px;
+	height: 40px;
+	margin-left: 20px;
+	background: #EF5A42;
+	cursor: pointer;
+}
+
+.nav-toggle span {
+	display: block;
+	position: absolute;
+	top: 19px;
+	left: 8px;
+	right: 8px;
+	height: 2px;
+	background: white;
+}
+
+.nav-toggle span:before, .nav-toggle span:after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+
+.nav-toggle span:before {
+  top: -10px;
+}
+
+.nav-toggle span:after {
+  bottom: -10px;
+}
+
+/* a class that will be added to the top menu when you click on the button and will show the hidden menu*/
+#menu.active {
+  max-height: 123px;
+}
+
+/* block for widgets */
+.widget {
+  padding: 20px 15px;
+  background: white;
+  font-size: 13px;
+  margin-bottom: 30px;
+  box-shadow: 3px 3px 1px rgba(0, 0, 0, .05);
+}
+
+.widget-title {
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 2px solid #F8B763;
+  box-shadow: 3px 3px 0 0 #F8B763;
+}
+
+.widget form {
+	padding: 10px 15px;
+	line-height: 38px;
+	font-family: sans-serif;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+
+.widget h4 {
+	margin-bottom: 12px;
+}
+
+#lastbut {
+	color: #fff;
+	background-color: #656565;
+	border-radius: 10px;
+	margin-top: 20px;
+	padding: 4px 5px;
+	font-size: 16px;
+}
+
+#lastbut:hover {
+	background-color: #ee8336;
+	box-shadow: 2px 2px 0 0 #F8B763;
+}
+
+footer {
+	padding: 30px 0;
+	background: #3C3D41;
+	color: white;
+}
+
+.footer-col {
+	width: 33.3333333333%;
+	float: left;
+}
+
+.footer-col span {
+	line-height: 1.5;
+	padding-bottom: 1em;
+}
+
+.footer-col a {
+  color: white;
+}
+
+.footer-col:last-child {
+  text-align: right;
+}
+
+.social-bar-wrap {
+  text-align: center;
+}
+
+.social-bar-wrap a {
+	padding: 0 7px;
+	font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+	/* shows a button to switch the top navigation */
+	.nav-toggle {
+		display: block;
+	}
+
+	header {
+	  padding: 10px 0;
+	}
+
+	/* hiding the top menu, cancel the flow around, position it, and move it to the height of the site header */
+	#menu {
+	  max-height: 0;
+	  background: white;
+	  float: none;
+	  position: absolute;
+	  overflow: hidden;
+	  top: 63px;
+	  right: 0;
+	  left: 0;
+	  margin: 0;
+	  padding: 0;
+	  z-index: 3;
+	}
+
+	/* making the list elements block-by-block so that they are located under each other */
+	#menu li {
+	  display: block;
+	  text-align: center;
+	  border-bottom: 1px solid #EBEBE3;
+	  margin-right: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.post-image-small {
+	  width: 100%;
+	  margin-bottom: 15px;
+	  float: none;
+	}
+
+	.widget-posts-list li {
+		width: 48%;
+	}
+}
+
+@media (max-width: 480px) {
+	/* cancel the flow around for the logo and level it in the center*/
+	.logo {
+	  float: none;
+	  margin: 0 auto 15px;
+	  display: table;
+	}
+
+	.logo span {
+	  margin: 0 2px;
+	}
+
+	/* positioning the menu to increase the height of the header */
+	#menu {
+	  top: 118px;
+	}
+
+	.location {
+	  float: left;
+	  margin-left: 0;
+	}
+
+	.widget-posts-list li {
+		width: 100%;
+	}
+
+	/* cancel the flow around for the basement columns of the page */
+	.footer-col {
+	  float: none;
+	  margin-bottom: 20px;
+	  width: 100%;
+	  text-align: center;
+	}
+
+	.footer-col:last-child {
+	  text-align: center;
+	  margin-bottom: 0;
+	}
+}
+
+
+
+  
+  
+  
+  /* Form input field styling */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+	width: 240px;
+	padding: 12px 15px;
+	margin: 10px 0;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	color: #333;
+	background-color: #f9f9f9;
+	transition: all 0.3s ease-in-out;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus {
+	border-color: #007bff;
+	outline: none;
+	background-color: #fff;
+  }
+  
+  /* Radio buttons */
+  input[type="radio"] {
+	margin: 0 5px;
+  }
+  
+  label {
+	font-size: 16px;
+	color: #555;
+	margin-right: 20px;
+  }
+  
+  /* Submit button styling */
+  #lastbut {
+	background-color: #007bff;
+	color: #fff;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 8px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	width: 100px;
+  }

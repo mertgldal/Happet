@@ -1,0 +1,39 @@
+{% include "header.html" %}
+
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% endblock %}
+{% from "bootstrap5/form.html" import render_form %}
+
+{% block content %}
+
+    <main class="mb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <div class="alert alert-warning">
+                                {% for message in messages %}
+                                <div>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                    {{ render_form(form, novalidate=True) }}
+                    <div class="border-top pt-3">
+                        <small class="text-muted">
+                            Don't have an account? <a class="ml-2" href="{{ url_for('main.register') }}">Sign Up</a>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+{% endblock %}
+{% include "footer.html" %}

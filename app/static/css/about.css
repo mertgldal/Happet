@@ -1,0 +1,282 @@
+*, *:after, *:before {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   transition: .5s ease-in-out;
+}
+
+ul {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   outline: none;
+}
+
+img {
+   display: block;
+   width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-family: 'Playfair Display';
+   font-weight: normal;
+   letter-spacing: 1px;
+}
+
+body {
+   font-family: 'Open Sans', arial, sans-serif;
+   font-size: 14px;
+   line-height: 1;
+   color: #373737;
+   background: #f7f7f7;
+}
+
+/* Flow cleaning for containers */
+header:after, .container:after, footer:after {
+   content: "";
+   display: table;
+   clear: both;
+}
+
+/* Container to center content */
+.container {
+   margin: 0 auto;
+   width: 100%;
+   max-width: 1120px;
+   padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+   width: 100%;
+   background: white;
+   box-shadow: 3px 3px 1px rgba(0, 0, 0, .05);
+   padding: 15px 0;
+   margin-bottom: 30px;
+   position: relative;
+}
+
+.logo {
+   display: block;
+   float: left;
+}
+
+.logo span {
+   color: white;
+   display: inline-block;
+   width: 30px;
+   height: 30px;
+   line-height: 30px;
+   border-radius: 50%;
+   margin: 5px 0;
+   text-align: center;
+   text-shadow: 2px 2px 1px rgba(0, 0, 0, .4);
+}
+
+.logo span:nth-child(odd) {
+   background: #EF5A42;
+}
+
+.logo span:nth-child(even) {
+   background: #F8B763;
+}
+
+/* Main Navigation Menu */
+#menu {
+   float: right;
+}
+
+#menu li {
+   display: inline-block;
+   margin-right: 30px;
+}
+
+#menu a {
+   color: #111;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   font-weight: 600;
+   display: block;
+   line-height: 40px;
+}
+
+#menu a:hover {
+   color: #EF5A42;
+}
+
+#menu li:last-child {
+   margin-right: 0;
+}
+
+.location {
+   float: right;
+   height: 40px;
+   margin-top: 12px;
+   margin-left: 46px;
+   display: inline-block;
+   position: relative;
+}
+
+.nav-toggle {
+   display: none;
+   position: relative;
+   float: right;
+   width: 40px;
+   height: 40px;
+   margin-left: 20px;
+   background: #EF5A42;
+   cursor: pointer;
+}
+
+.nav-toggle span {
+   display: block;
+   position: absolute;
+   top: 19px;
+   left: 8px;
+   right: 8px;
+   height: 2px;
+   background: white;
+}
+
+.nav-toggle span:before, .nav-toggle span:after {
+   content: "";
+   position: absolute;
+   display: block;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background: white;
+}
+
+.nav-toggle span:before {
+   top: -10px;
+}
+
+.nav-toggle span:after {
+   bottom: -10px;
+}
+
+#menu.active {
+   max-height: 123px;
+}
+
+/* About Page Content Styling */
+.about-page {
+   background: #fff;
+   padding: 40px;
+   border-radius: 8px;
+   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+   font-size: 32px;
+   color: #EF5A42;
+   text-align: center;
+}
+
+h2 {
+   font-size: 26px;
+   color: #333;
+   margin-bottom: 20px;
+   border-bottom: 2px solid #F8B763;
+   padding-bottom: 10px;
+}
+
+section {
+   margin-bottom: 40px;
+}
+
+.about-content p, .what-we-do ul li, .our-mission p, .our-impact p, .get-involved ul li {
+   font-size: 16px;
+   line-height: 1.6;
+   margin-bottom: 15px;
+}
+
+ul li strong {
+   color: #EF5A42;
+}
+
+.partners ul {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.partners li {
+   margin-right: 15px;
+   margin-bottom: 15px;
+}
+
+.partners img {
+   width: 100px;
+   transition: transform .3s ease;
+}
+
+.partners img:hover {
+   transform: scale(1.05);
+}
+
+/* Footer Styling */
+footer {
+   background: #3C3D41;
+   color: white;
+   padding: 30px 0;
+   text-align: center;
+}
+
+.footer-col {
+   width: 33.3333%;
+   float: left;
+}
+
+.footer-col a {
+   color: white;
+}
+
+.social-bar-wrap a {
+   padding: 0 7px;
+   font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+   .nav-toggle {
+      display: block;
+   }
+
+   header {
+      padding: 10px 0;
+   }
+
+   #menu {
+      max-height: 0;
+      background: white;
+      float: none;
+      position: absolute;
+      overflow: hidden;
+      top: 63px;
+      right: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+   }
+
+   #menu li {
+      display: block;
+      text-align: center;
+      border-bottom: 1px solid #EBEBE3;
+      margin-right: 0;
+   }
+}
+
+@media (max-width: 768px) {
+   .posts-list, aside {
+      width: 100%;
+      float: none;
+   }
+
+   .partners img {
+      width: 80px;
+   }
+}

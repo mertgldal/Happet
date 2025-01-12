@@ -1,0 +1,31 @@
+{% include "header.html" %}
+
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="../static/css/petduringwar.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% endblock %}
+{% from "bootstrap5/form.html" import render_form %}
+
+    <div class="container">
+      <div class="widget">
+        <h3 class="widget-title">Who was this section created for?</h3>
+        <h4 id="attention">Attention!</h4>
+        <p>Due to emergencies, HAPPET and our partners decided to create a program to help the pets of those people who do not have the opportunity to take care of their pets and want someone to take care of their pets for the allotted period. <br>we provide an opportunity for such people to leave their pets for their chosen period in our shelter. <br>if you do not have the opportunity or conditions to care for your pet - <b>HAPPET</b> will help you!</p>
+      </div>
+      <div class="widget">
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alert alert-warning">
+                {% for message in messages %}
+                    <div>{{ message }}</div>
+                {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+        <h3 class="widget-title">Fill in the appropriate fields:</h3>
+          {{ render_form(form, novalidate=True) }}
+      </div>
+    </div>
+
+{% include "footer.html" %}
