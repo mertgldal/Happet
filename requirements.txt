@@ -14,3 +14,4 @@ stripe==11.3.0
 python-dotenv==1.0.1
 bootstrap-flask==2.4.1
 wtforms==3.2.1
+pytest==8.3.4

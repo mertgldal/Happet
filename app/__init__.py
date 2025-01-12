@@ -4,15 +4,19 @@ from flask_login import LoginManager, current_user
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
 from functools import wraps
+from config import Config, TestingConfig
 
 db = SQLAlchemy()
 login_manager = LoginManager()
 ckeditor = CKEditor()
 
 
-def create_app():
+def create_app(config_name='default'):
     app = Flask(__name__)
-    app.config.from_object("config.Config")
+    if config_name == 'testing':
+        app.config.from_object(TestingConfig)
+    else:
+        app.config.from_object(Config)
 
     db.init_app(app)
     login_manager.init_app(app)
