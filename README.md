@@ -6,6 +6,11 @@ g2App is a web-based platform designed to facilitate the management of an animal
 
 This project was developed as a group effort, with team members contributing to various aspects of the system using GitHub Project for task management and collaboration.
 
+### Home Page
+
+![home](assets/home.png)
+
+
 ## Code Structure
 
 g2App follows a structured Flask backend with an MVC (Model-View-Controller) pattern:
@@ -19,6 +24,9 @@ g2App follows a structured Flask backend with an MVC (Model-View-Controller) pat
 - **tests/**: Includes unit and integration tests for validating the application's functionality.
 - **config.py**: Configuration settings for the application, including database and security settings.
 - **run.py**: Entry point for running the Flask application.
+
+### Rehome Page
+![rehome](assets/rehome.png)
 
 ## Testing
 
@@ -36,8 +44,54 @@ The project includes a comprehensive test suite to ensure stability and correctn
 ## Development Workflow
 
 GitHub Project was used to manage tasks effectively:
-- **Backlog**: Features and enhancements to be implemented.
-- **In Progress**: Tasks actively being worked on, such as deployment, quality assurance, and documentation.
-- **Done**: Completed milestones, including backend and frontend development.
 
 This workflow ensured a clear division of tasks and seamless collaboration among team members.
+
+### Temporary Care
+![temporary care](assets/temporary-care.png)
+
+
+### 🧑‍💻 Team Members & Contributions
+
+- **[Mert Güldal](https://github.com/mertgldal)**  
+  - Backend development  
+  - Integration of frontend and backend  
+  - API design & documentation  
+  - Testing & Quality Assurance  
+  - Deployment & Maintenance  
+  - Version control & branch management
+
+
+- **[Oleksandr Yurchak](https://github.com/Alex121512)**  
+  - Frontend development  
+  - Project Documentation  
+  - UI/UX alignment & component integration
+  
+
+- **[Yostina Shiferaw](https://github.com/yostinas)**  
+  - Project Documentation  
+  - Project Review & Presentation  
+  - Animal Data & Adoption Workflow  
+  - User Feedback Collection & Analysis
+
+
+- **[Gulsezim Bigali](https://github.com/gulsezyym)**  
+  - Project Documentation  
+  - Project Review & Presentation  
+  - Animal Data & Adoption Workflow  
+  - Workflow Diagrams & Process Mapping
+
+
+- **[Zakir Huseynov](https://github.com/zakirh13)**  
+  - Project Documentation  
+  - Project Review & Presentation  
+  - Animal Data & Adoption Workflow  
+  - Database Schema Suggestions
+
+
+- **[Life Tafare](https://github.com/Litafe)**  
+  - Project Documentation  
+  - Project Review & Presentation  
+  - Animal Data & Adoption Workflow  
+  - Testing & Bug Reporting
+
